@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PlayButton : MonoBehaviour {
+
+int currentSceneIndex;
+
+void Start() {
+
+    currentSceneIndex = SceneManager.GetActiveScene ().buildIndex;
+}
+
+    public void LoadGame()
+    {
+
+        Invoke ("LoadNextLevel", 0.5f);
+
+    }
+    
+   void LoadNextLevel()
+    {
+        SceneManager.LoadScene (currentSceneIndex +1);
+    }
+
+}
+
+
